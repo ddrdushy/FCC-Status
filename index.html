@@ -7,10 +7,43 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery library -->
     <script src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var html="";
+            $.getJSON('data.json', function(json) {
+                alert(json["array"].length);
+                for(var i=0;i<json["array"].length;i++){
+                    //var points=browniePointsFetcher(json["array"][i]["username"]);
+                    var points=5;
+                    html+=dataFormater(json["array"][i]["avatarUrlSmall"],json["array"][i]["displayName"],json["array"][i]["username"],points);
+                }
+                $("#data").html(html);
+            });
+        });
 
+        function browniePointsFetcher(uname){
+            var points=0;
+            var url='https://www.freecodecamp.com/api/users/about?username='+uname;
+            $.getJSON(url, function(json) {
+                alert(json["array"][0]["id"]);
+            });
+            return points;
+        }
+        function dataFormater(image,name,uname,points){
+            var html='<div class="col-xs-3">';
+            html+='<img src='+image+' class="img-thumbnail"><//img></div>';
+            html+='<div class="col-xs-3">';
+            html+='<h2>'+name+'</h2></div>';
+            html+='<div class="col-xs-3">';
+            html+='<h2>'+uname+'</h2></div>';
+            html+='<div class="col-xs-3">';
+            html+='<h2>'+points+'</h2></div>';
+            return html;
+        }
+    </script>
 </head>
 <body>
-
+    
 </body>
 
 </html>
