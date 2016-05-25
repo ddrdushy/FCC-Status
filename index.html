@@ -41,6 +41,9 @@
                 success: function (data) {
                     //Do stuff with the JSON data
                     points=data["about"]["browniePoints"];
+                },
+                error:function(xhr, textStatus, errorThrown){
+                    points="error";
                 }
             });
             return points;
@@ -53,7 +56,12 @@
             temp_html+='<td>';
             temp_html+='<h3><a href="http://freecodecamp.com/'+uname+'" target="_blank">'+uname+'</a></h3></td>';
             temp_html+='<td>';
-            temp_html+='<h3>'+points+'</h3></td>';
+            if(points==="error"){
+                temp_html+='<h3><span class="label label-warning">'+points+'</span></h3></td>';
+            }else{
+                temp_html+='<h3>'+points+'</h3></td>';
+            }
+
             return temp_html;
         }
     </script>
