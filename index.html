@@ -8,25 +8,31 @@
     <!-- jQuery library -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
-        var html="";
+
+        var arr=[];
         var points=0;
-        html='<table class="table" id="data"><tr><h1><th>SNO</th><th>Avatar</th><th>Name</th><th>User Name</th><th>Points</th></h1></tr>';
+        var html='<table class="table" id="data"><tr><th>SNO</th><th>Avatar</th><th>Name</th><th>User Name</th><th>Points</th></tr>';
         $(document).ready(function(){
-
             $.getJSON('data.json', function(json) {
-
-                //alert(json["array"].length);
+                //alert(json["array"].length
                 for(var i=0;i<json["array"].length;i++){
                     points=browniePointsFetcher(json["array"][i]["username"]);
-                    //var points=5;
-                    html+='<tr><td>'+(i+1)+'</td>'+dataFormater(json["array"][i]["avatarUrlSmall"],json["array"][i]["displayName"],json["array"][i]["username"],points)+'</tr>';
+                    arr.push({avatar:json["array"][i]["avatarUrlSmall"],name:json["array"][i]["displayName"],uname:json["array"][i]["username"],points:points})
                 }
+               arr.sort(function(a,b){
+                    return a.points- b.points;
+               });
+                arr.reverse();
+                var j=0;
+                html+=arr.map(function (a) {
+                    j++;
+                    return '<tr><td>'+(j)+'</td>'+dataFormater(a.avatar, a.name, a.uname, a.points)+'</tr>';
+                }).join('');
                 html+='</table>';
-                //alert(html);
+
                 $("#data").html(html);
             });
 
-            //alert(html);
         });
 
         function browniePointsFetcher(uname){
@@ -43,7 +49,7 @@
                     points=data["about"]["browniePoints"];
                 },
                 error:function(xhr, textStatus, errorThrown){
-                    points="error";
+                    points=0;
                 }
             });
             return points;
@@ -56,7 +62,7 @@
             temp_html+='<td>';
             temp_html+='<h3><a href="http://freecodecamp.com/'+uname+'" target="_blank">'+uname+'</a></h3></td>';
             temp_html+='<td>';
-            if(points==="error"){
+            if(points===0){
                 temp_html+='<h3><span class="label label-warning">'+points+'</span></h3></td>';
             }else{
                 temp_html+='<h3>'+points+'</h3></td>';
@@ -84,7 +90,7 @@
         <br/>
         <br/>
         <div class="row text-center">
-            <div class="col-xs-12 table-responsive" id="data">
+            <div class="col-xs-12" id="data">
 
             </div>
         </div>
