@@ -15,15 +15,23 @@
         $(document).ready(function(){
             $.getJSON('data.json', function(json) {
                 //alert(json["array"].length
-                for(var i=0;i<json["array"].length;i++){
+                var len=json["array"].length;
+                var sum=0;
+                for(var i=0;i<len;i++){
                     points=browniePointsFetcher(json["array"][i]["username"]);
+                    sum+=points;
                     arr.push({avatar:json["array"][i]["avatarUrlSmall"],name:json["array"][i]["displayName"],uname:json["array"][i]["username"],points:points})
                 }
+                $("#campers").html('<h2><span class="label label-info">Total Campers:- '+len+'</span></h2>');
+
                arr.sort(function(a,b){
                     return a.points- b.points;
                });
+
                 arr.reverse();
                 var j=0;
+
+
                 html+=arr.map(function (a) {
                     j++;
                     return '<tr><td>'+(j)+'</td>'+dataFormater(a.avatar, a.name, a.uname, a.points)+'</tr>';
@@ -31,6 +39,11 @@
                 html+='</table>';
 
                 $("#data").html(html);
+
+                var a=$("#data").html();
+
+                //alert(a);
+                $("#totalProblems").html('<h2><span class="label label-info">Total Problems:- '+sum+'</span></h2>');
             });
 
         });
@@ -81,11 +94,20 @@
 
 </head>
 <body>
-    <div class="container well">
+    <div class="container-fluid well">
         <div class="row text-center">
             <div class="col-xs-12">
                 <h1><span class="label label-primary">Free Code Camp User Report</span></h1>
             </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-6" id="campers">
+
+            </div>
+            <div class="col-xs-6" id="totalProblems">
+
+            </div>
+
         </div>
         <br/>
         <br/>
