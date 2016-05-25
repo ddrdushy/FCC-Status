@@ -8,42 +8,80 @@
     <!-- jQuery library -->
     <script src="js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
+        var html="";
+        var points=0;
+        html='<table class="table" id="data"><tr><h1><th>SNO</th><th>Avatar</th><th>Name</th><th>User Name</th><th>Points</th></h1></tr>';
         $(document).ready(function(){
-            var html="";
+
             $.getJSON('data.json', function(json) {
-                alert(json["array"].length);
+
+                //alert(json["array"].length);
                 for(var i=0;i<json["array"].length;i++){
-                    //var points=browniePointsFetcher(json["array"][i]["username"]);
-                    var points=5;
-                    html+=dataFormater(json["array"][i]["avatarUrlSmall"],json["array"][i]["displayName"],json["array"][i]["username"],points);
+                    points=browniePointsFetcher(json["array"][i]["username"]);
+                    //var points=5;
+                    html+='<tr><td>'+(i+1)+'</td>'+dataFormater(json["array"][i]["avatarUrlSmall"],json["array"][i]["displayName"],json["array"][i]["username"],points)+'</tr>';
                 }
+                html+='</table>';
+                //alert(html);
                 $("#data").html(html);
             });
+
+            //alert(html);
         });
 
         function browniePointsFetcher(uname){
             var points=0;
-            var url='https://www.freecodecamp.com/api/users/about?username='+uname;
-            $.getJSON(url, function(json) {
-                alert(json["array"][0]["id"]);
+            var url='https://www.freecodecamp.com/api/users/about?username='+uname.toLowerCase();
+            $.ajax({
+                type:'GET',
+                url:url,
+                //data:data,
+                async: false,
+                dataType: 'json',
+                success: function (data) {
+                    //Do stuff with the JSON data
+                    points=data["about"]["browniePoints"];
+                }
             });
             return points;
         }
         function dataFormater(image,name,uname,points){
-            var html='<div class="col-xs-3">';
-            html+='<img src='+image+' class="img-thumbnail"><//img></div>';
-            html+='<div class="col-xs-3">';
-            html+='<h2>'+name+'</h2></div>';
-            html+='<div class="col-xs-3">';
-            html+='<h2>'+uname+'</h2></div>';
-            html+='<div class="col-xs-3">';
-            html+='<h2>'+points+'</h2></div>';
-            return html;
+            var temp_html='<td>';
+            temp_html+='<img src='+image+' class="img-thumbnail" width="100px" ></img></td>';
+            temp_html+='<td>';
+            temp_html+='<h3>'+name+'</h3></td>';
+            temp_html+='<td>';
+            temp_html+='<h3><a href="http://freecodecamp.com/'+uname+'" target="_blank">'+uname+'</a></h3></td>';
+            temp_html+='<td>';
+            temp_html+='<h3>'+points+'</h3></td>';
+            return temp_html;
         }
     </script>
+
+    <style type="text/css">
+        .col-xs-3{
+            border-color:#0f0f0f;
+            border-width: 2px;
+        }
+    </style>
+
 </head>
 <body>
-    
+    <div class="container well">
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <h1><span class="label label-primary">Free Code Camp User Report</span></h1>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="row text-center">
+            <div class="col-xs-12 table-responsive" id="data">
+
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>
