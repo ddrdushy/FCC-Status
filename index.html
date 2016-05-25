@@ -22,7 +22,9 @@
                     sum+=points;
                     arr.push({avatar:json["array"][i]["avatarUrlSmall"],name:json["array"][i]["displayName"],uname:json["array"][i]["username"],points:points})
                 }
+                
                 $("#campers").html('<h2><span class="label label-info">Total Campers:- '+len+'</span></h2>');
+
 
                arr.sort(function(a,b){
                     return a.points- b.points;
@@ -42,8 +44,11 @@
 
                 var a=$("#data").html();
 
+
                 //alert(a);
                 $("#totalProblems").html('<h2><span class="label label-info">Total Problems:- '+sum+'</span></h2>');
+
+
             });
 
         });
