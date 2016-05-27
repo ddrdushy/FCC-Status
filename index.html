@@ -14,6 +14,7 @@
         var points=0;
         var html='<table class="table" id="data"><tr><th>SNO</th><th>Avatar</th><th>Name</th><th>User Name</th><th>Points</th></tr>';
         $(document).ready(function(){
+
             var url='https://api.gitter.im/v1/rooms?access_token='+key;
             var roomId="";
             var noOfUsers=0;
@@ -34,9 +35,7 @@
 
                     }
                 },
-                error:function(xhr, textStatus, errorThrown){
-                    points=0;
-                }
+
             });
             var jsonData=[];
 
