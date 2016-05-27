@@ -56,17 +56,24 @@ function getData(jsonData){
         var len=jsonData.length;
         var sum=0;
         for(var i=0;i<len;i++){
-            if(jsonData[i]["id"]!=='546fc9f1db8155e6700d6e8c' && jsonData[i]["id"]!=='5433c4b0163965c9bc209625'&& jsonData[i]["id"]!=='570a6857187bb6f0eadec072'){
-            points=browniePointsFetcher(jsonData[i]["username"]);
-            sum+=points;
-            arr.push({avatar:jsonData[i]["avatarUrlSmall"],name:jsonData[i]["displayName"],uname:jsonData[i]["username"],points:points});
+            if(jsonData[i]["id"]!=='546fc9f1db8155e6700d6e8c' &&
+               jsonData[i]["id"]!=='5433c4b0163965c9bc209625' &&
+               jsonData[i]["id"]!=='570a6857187bb6f0eadec072') {
+                points=browniePointsFetcher(jsonData[i]["username"]);
+                sum+=points;
+                arr.push({
+                    avatar:jsonData[i]["avatarUrlSmall"],
+                    name:jsonData[i]["displayName"],
+                    uname:jsonData[i]["username"],
+                    points:points
+                });
+                
                 $('.progress-bar').css({
                     width: (i/len) * 100 + '%'
                 });
             }
         }
-    $('.progress-bar').prop("hidden",true);
-
+        $('.progress-bar').prop("hidden",true);
 
 
         arr.sort(function(a,b){
@@ -75,8 +82,8 @@ function getData(jsonData){
 
         arr.reverse();
         var j=0;
-
-
+        
+        
         html+=arr.map(function (a) {
             j++;
             return '<tr><td>'+(j)+'</td>'+dataFormatter(a.avatar, a.name, a.uname, a.points)+'</tr>';
