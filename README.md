@@ -8,5 +8,5 @@ To see the output:
 
 1. Clone the project locally
 2. Open the `index.html` within your browser
-3. Depending upon your bandwidth, it might take > 1-2 minutes
+3. Depending upon your bandwidth, it might even take 1-2 minutes
 
