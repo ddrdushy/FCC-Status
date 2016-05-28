@@ -1,4 +1,12 @@
 Free Code Camp
 ==============
 
-project to Track the Free code camp Users in KGISL. Clone the project and Use any web server to Run. 
+The first working attempt at creating a specialized CamperBot
+for tracking KGISL FCC camper progress. 
+
+To see the output: 
+
+1. Clone the project locally
+2. Open the `index.html` within your browser
+3. Depending upon your bandwidth, it might even take 1-2 minutes
+
