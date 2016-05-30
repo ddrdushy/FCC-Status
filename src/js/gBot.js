@@ -4,7 +4,6 @@
 /*jslint latedef:false*/
 /*jslint browser:true */
 /*jshint maxparams: 5 */
-/*jshint indent: 2 */
 
 var key = "ae28f23f134c4364ad45e7b7355cfa91c92038bb";
 var arr = [];
