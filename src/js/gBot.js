@@ -63,9 +63,9 @@ function getData(jsonData){
                 points=browniePointsFetcher(jsonData[i].username);
                 sum+=points;
                 arr.push({
-                    avatar:jsonData[i]["avatarUrlSmall"],
-                    name:jsonData[i]["displayName"],
-                    uname:jsonData[i]["username"],
+                    avatar:jsonData[i].avatarUrlSmall,
+                    name:jsonData[i].displayName,
+                    uname:jsonData[i].username,
                     points:points
                 });
             
@@ -110,10 +110,10 @@ function browniePointsFetcher(uname){
         dataType: 'json',
         success: function (data) {
             //Do stuff with the JSON data
-            points=data["about"]["browniePoints"];
+            points = data.about.browniePoints;
         },
-        error:function(xhr, textStatus, errorThrown){
-            points=0;
+        error:function(/* xhr, textStatus, errorThrown */){
+            points = 0;
         }
     });
     return points;
