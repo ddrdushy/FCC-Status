@@ -1,0 +1,6 @@
+runTests = function () {
+            module('my module');
+            test('my test', function () {
+                equal(2 + 2, 4, 'kindergarten');
+            });
+        }
