@@ -91,7 +91,7 @@ function dataFormatter(image, name, uname, points) {
 
   var tempHtml = '<td>';
   tempHtml += '<img src=' + image +
-    ' class="img-thumbnail" width="100px" ></img></td>';
+    ' class="img-thumbnail" width="50px" ></img></td>';
   tempHtml += '<td>';
   tempHtml += '<h3>' + name + '</h3></td>';
   tempHtml += '<td>';
