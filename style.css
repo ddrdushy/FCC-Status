@@ -3,5 +3,9 @@
         border-color:#ff6600;
         border-width: 2px;
     }
+
+    tr:hover { background: yellow; }
+
 </style>
+
 
