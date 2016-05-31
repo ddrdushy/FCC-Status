@@ -1,10 +1,13 @@
 <style type="text/css">
-    .col-xs-3{
+    .col-xs-3 {
         border-color:#0f0f0f;
         border-width: 2px;
     }
 
-    tr:hover { background: #ff6600; }
+    tr:hover { 
+    	background: #ff6600;
+ 	    opacity: 0.7;
+    }
 
 </style>
 
