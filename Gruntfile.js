@@ -1,7 +1,7 @@
 /*global module*/
 
 /* Installing jscoverage on ubuntu trusty */
-/* sudo apt-get install jscoverage */ 
+/* sudo apt-get install jscoverage */
 
 module.exports = function (grunt) {
   'use strict';
@@ -14,7 +14,7 @@ module.exports = function (grunt) {
       quotmark: true, regexp: true, undef: true, unused: true, strict: true, trailing: true,
       maxparams: 3, maxdepth: 2, maxstatements: 50},
     all: [
-      /*'Gruntfile.js',*/
+      'Gruntfile.js',
       'src/js/**/*.js'
     ]
   };
@@ -35,22 +35,22 @@ module.exports = function (grunt) {
     }
   };
 
-  /*grunt.loadNpmTasks('grunt-contrib-watch'); */
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.loadNpmTasks('grunt-qunit-cov');
 
   gruntConfig['qunit-cov'] = {
-        test:
-        {
-            minimum: 0.99,
-            baseDir: 'src',
-            srcDir: 'src/js',
-            depDirs: ['src/test', 'src/test/lib'],
-            outDir: 'output/coverage',
-            testFiles: ['src/test/index.html']
-        }
-    };
+    test:
+    {
+      minimum: 0.99,
+      baseDir: 'src',
+      srcDir: 'src/js',
+      depDirs: ['src/test', 'src/test/lib'],
+      outDir: 'output/coverage',
+      testFiles: ['src/test/index.html']
+    }
+  };
 
-    grunt.registerTask('coverage', 'qunit-cov'); 
+  grunt.registerTask('coverage', 'qunit-cov');
 
 };
