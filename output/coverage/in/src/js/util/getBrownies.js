@@ -39,44 +39,51 @@ if (typeof _$jscoverage !== 'object') {
 }
 if (! _$jscoverage['util/getBrownies.js']) {
   _$jscoverage['util/getBrownies.js'] = [];
-  _$jscoverage['util/getBrownies.js'][9] = 0;
-  _$jscoverage['util/getBrownies.js'][10] = 0;
+  _$jscoverage['util/getBrownies.js'][11] = 0;
   _$jscoverage['util/getBrownies.js'][12] = 0;
-  _$jscoverage['util/getBrownies.js'][15] = 0;
-  _$jscoverage['util/getBrownies.js'][16] = 0;
-  _$jscoverage['util/getBrownies.js'][17] = 0;
-  _$jscoverage['util/getBrownies.js'][21] = 0;
-  _$jscoverage['util/getBrownies.js'][29] = 0;
+  _$jscoverage['util/getBrownies.js'][14] = 0;
+  _$jscoverage['util/getBrownies.js'][18] = 0;
+  _$jscoverage['util/getBrownies.js'][19] = 0;
+  _$jscoverage['util/getBrownies.js'][20] = 0;
+  _$jscoverage['util/getBrownies.js'][22] = 0;
+  _$jscoverage['util/getBrownies.js'][24] = 0;
+  _$jscoverage['util/getBrownies.js'][32] = 0;
   _$jscoverage['util/getBrownies.js'][33] = 0;
-  _$jscoverage['util/getBrownies.js'][36] = 0;
-  _$jscoverage['util/getBrownies.js'][38] = 0;
+  _$jscoverage['util/getBrownies.js'][37] = 0;
+  _$jscoverage['util/getBrownies.js'][41] = 0;
+  _$jscoverage['util/getBrownies.js'][44] = 0;
 }
-_$jscoverage['util/getBrownies.js'].source = ["<span class=\"c\">/*global $:false */</span>","<span class=\"c\">/*jshint quotmark: false */</span>","<span class=\"c\">/*jshint loopfunc: true */</span>","<span class=\"c\">/*jslint latedef:false*/</span>","<span class=\"c\">/*jslint browser:true */</span>","<span class=\"c\">/*jshint maxparams: 5 */</span>","<span class=\"c\">/*global define*/</span>","<span class=\"c\">/*var $ = require (\"../lib/jquery.js\"); */</span>","define<span class=\"k\">([],</span> <span class=\"k\">function</span> <span class=\"k\">()</span> <span class=\"k\">{</span>","    <span class=\"s\">'use strict'</span><span class=\"k\">;</span>","","    <span class=\"k\">return</span> <span class=\"k\">{</span>","        getPoints<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>uname<span class=\"k\">)</span> <span class=\"k\">{</span>","","            <span class=\"k\">if</span> <span class=\"k\">(</span>uname<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span> <span class=\"k\">&amp;&amp;</span> $ <span class=\"k\">!==</span> undefined<span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">var</span> points <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span>","                <span class=\"k\">var</span> url <span class=\"k\">=</span>","                    <span class=\"s\">'https://www.freecodecamp.com/api/users/about?username='</span> <span class=\"k\">+</span>","                    uname<span class=\"k\">.</span>toLowerCase<span class=\"k\">();</span>","","                $<span class=\"k\">.</span>ajax<span class=\"k\">(</span><span class=\"k\">{</span>","                    type<span class=\"k\">:</span> <span class=\"s\">'GET'</span><span class=\"k\">,</span>","                    url<span class=\"k\">:</span> url<span class=\"k\">,</span>","                    <span class=\"c\">//data:data,</span>","                    async<span class=\"k\">:</span> <span class=\"k\">false</span><span class=\"k\">,</span>","                    dataType<span class=\"k\">:</span> <span class=\"s\">'json'</span><span class=\"k\">,</span>","                    success<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>data<span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">//Do stuff with the JSON data</span>","                        points <span class=\"k\">=</span> data<span class=\"k\">.</span>about<span class=\"k\">.</span>browniePoints<span class=\"k\">;</span>","                        <span class=\"c\">// points = 310;</span>","                    <span class=\"k\">}</span><span class=\"k\">,</span>","                    error<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span> <span class=\"c\">/* xhr, textStatus, errorThrown */</span> <span class=\"k\">)</span> <span class=\"k\">{</span>","                        points <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span><span class=\"k\">);</span>","                <span class=\"k\">return</span> points<span class=\"k\">;</span>","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                <span class=\"k\">return</span> <span class=\"s\">0</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","","        <span class=\"k\">}</span>","    <span class=\"k\">}</span><span class=\"k\">;</span>","","<span class=\"k\">}</span><span class=\"k\">);</span>"];
-_$jscoverage['util/getBrownies.js'][9]++;
+_$jscoverage['util/getBrownies.js'].source = ["<span class=\"c\">/*global $:false */</span>","<span class=\"c\">/*jshint quotmark: false */</span>","<span class=\"c\">/*jshint loopfunc: true */</span>","<span class=\"c\">/*jslint latedef:false*/</span>","<span class=\"c\">/*jslint browser:true */</span>","<span class=\"c\">/*jshint maxparams: 5 */</span>","<span class=\"c\">/*global define*/</span>","","<span class=\"c\">/*let $ =  require (\"../lib/jquery.js\"); */</span>","","define<span class=\"k\">([],</span> <span class=\"k\">function</span> <span class=\"k\">()</span> <span class=\"k\">{</span>","    <span class=\"s\">'use strict'</span><span class=\"k\">;</span>","","    <span class=\"k\">return</span> <span class=\"k\">{</span>","        getPoints<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>uname<span class=\"k\">)</span> <span class=\"k\">{</span>","","","            <span class=\"k\">if</span> <span class=\"k\">(</span>uname<span class=\"k\">.</span>length <span class=\"k\">!==</span> <span class=\"s\">0</span> <span class=\"k\">&amp;&amp;</span> <span class=\"k\">typeof</span> $ <span class=\"k\">!==</span> undefined <span class=\"k\">)</span> <span class=\"k\">{</span>","                <span class=\"k\">var</span> points <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span>","                <span class=\"k\">var</span> url <span class=\"k\">=</span> <span class=\"s\">'https://www.freecodecamp.com/api/users/about?username='</span> <span class=\"k\">+</span> uname<span class=\"k\">.</span>toLowerCase<span class=\"k\">();</span>","","                console<span class=\"k\">.</span>log <span class=\"k\">(</span><span class=\"s\">\"**** URL \"</span> <span class=\"k\">+</span> url<span class=\"k\">);</span> ","","                $<span class=\"k\">.</span>ajax<span class=\"k\">(</span><span class=\"k\">{</span>","                    type<span class=\"k\">:</span> <span class=\"s\">'GET'</span><span class=\"k\">,</span>","                    url<span class=\"k\">:</span> url<span class=\"k\">,</span>","                    <span class=\"c\">//data:data,</span>","                    async<span class=\"k\">:</span> <span class=\"k\">false</span><span class=\"k\">,</span>","                    dataType<span class=\"k\">:</span> <span class=\"s\">'json'</span><span class=\"k\">,</span>","                    success<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span>data<span class=\"k\">)</span> <span class=\"k\">{</span>","                        <span class=\"c\">//Do stuff with the JSON data</span>","                        <span class=\"k\">if</span> <span class=\"k\">(</span><span class=\"k\">typeof</span> data <span class=\"k\">!==</span> undefined <span class=\"k\">)</span>","                          points <span class=\"k\">=</span> data<span class=\"k\">.</span>about<span class=\"k\">.</span>browniePoints<span class=\"k\">;</span>","                        <span class=\"c\">// points = 310;</span>","                    <span class=\"k\">}</span><span class=\"k\">,</span>","                    error<span class=\"k\">:</span> <span class=\"k\">function</span> <span class=\"k\">(</span> <span class=\"c\">/* xhr, textStatus, errorThrown */</span> <span class=\"k\">)</span> <span class=\"k\">{</span>","                        points <span class=\"k\">=</span> <span class=\"s\">0</span><span class=\"k\">;</span>","                    <span class=\"k\">}</span>","                <span class=\"k\">}</span><span class=\"k\">);</span>","","                <span class=\"k\">return</span> points<span class=\"k\">;</span>","","            <span class=\"k\">}</span> <span class=\"k\">else</span> <span class=\"k\">{</span>","                <span class=\"k\">return</span> <span class=\"s\">0</span><span class=\"k\">;</span>","            <span class=\"k\">}</span>","","        <span class=\"k\">}</span>","    <span class=\"k\">}</span><span class=\"k\">;</span>","","<span class=\"k\">}</span><span class=\"k\">);</span>"];
+_$jscoverage['util/getBrownies.js'][11]++;
 define([], (function () {
-  _$jscoverage['util/getBrownies.js'][10]++;
-  "use strict";
   _$jscoverage['util/getBrownies.js'][12]++;
+  "use strict";
+  _$jscoverage['util/getBrownies.js'][14]++;
   return ({getPoints: (function (uname) {
-  _$jscoverage['util/getBrownies.js'][15]++;
-  if (((uname.length !== 0) && ($ !== undefined))) {
-    _$jscoverage['util/getBrownies.js'][16]++;
+  _$jscoverage['util/getBrownies.js'][18]++;
+  if (((uname.length !== 0) && ((typeof $) !== undefined))) {
+    _$jscoverage['util/getBrownies.js'][19]++;
     var points = 0;
-    _$jscoverage['util/getBrownies.js'][17]++;
+    _$jscoverage['util/getBrownies.js'][20]++;
     var url = ("https://www.freecodecamp.com/api/users/about?username=" + uname.toLowerCase());
-    _$jscoverage['util/getBrownies.js'][21]++;
+    _$jscoverage['util/getBrownies.js'][22]++;
+    console.log(("**** URL " + url));
+    _$jscoverage['util/getBrownies.js'][24]++;
     $.ajax({type: "GET", url: url, async: false, dataType: "json", success: (function (data) {
-  _$jscoverage['util/getBrownies.js'][29]++;
-  points = data.about.browniePoints;
+  _$jscoverage['util/getBrownies.js'][32]++;
+  if (((typeof data) !== undefined)) {
+    _$jscoverage['util/getBrownies.js'][33]++;
+    points = data.about.browniePoints;
+  }
 }), error: (function () {
-  _$jscoverage['util/getBrownies.js'][33]++;
+  _$jscoverage['util/getBrownies.js'][37]++;
   points = 0;
 })});
-    _$jscoverage['util/getBrownies.js'][36]++;
+    _$jscoverage['util/getBrownies.js'][41]++;
     return points;
   }
   else {
-    _$jscoverage['util/getBrownies.js'][38]++;
+    _$jscoverage['util/getBrownies.js'][44]++;
     return 0;
   }
 })});

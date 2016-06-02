@@ -6,14 +6,14 @@
 /*jshint maxparams: 5 */
 /*global define*/
 
-let $ =  require ('../lib/jquery.js'); 
-
+/*let $ =  require ("../lib/jquery.js"); */
 
 define([], function () {
     'use strict';
 
     return {
         getPoints: function (uname) {
+
 
             if (uname.length !== 0 && typeof $ !== undefined ) {
                 var points = 0;
@@ -37,6 +37,7 @@ define([], function () {
                         points = 0;
                     }
                 });
+
                 return points;
 
             } else {

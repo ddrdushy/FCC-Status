@@ -5,11 +5,15 @@ require([
     module('util.getBrownies');
 
     test('existing user name', function () {
+        QUnit.stop(); 
         equal(gBot.getPoints('kgashok'), 310, 'kgashok');
+        QUnit.start(); 
     });
     
     test('length-zero user name', function () {
+        QUnit.stop(); 
         equal(gBot.getPoints(''), 0, '');
+        QUnit.start(); 
     });
 
 });
