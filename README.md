@@ -6,6 +6,10 @@ Specialized CamperBot for KGISL FCC
 The first working attempt at creating a specialized CamperBot
 for tracking KGISL FCC camper progress. 
 
+This is also a good sample project which implements
+Continuous integration and Continuous deployment. 
+And automated testing on every source change. 
+
 To see the output: 
 
 1. Clone the project locally
