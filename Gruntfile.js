@@ -22,4 +22,12 @@ module.exports = function (grunt) {
     src: ['src/test/index.html']
   };
   grunt.registerTask('test', 'qunit:src');
+
+  gruntConfig.watch = {
+    scripts: {
+      files: ['src/**/*.*'],
+      tasks: ['jshint', 'test']
+    }
+  };
+  grunt.loadNpmTasks('grunt-contrib-watch');
 };
