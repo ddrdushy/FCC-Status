@@ -1,4 +1,8 @@
 /*global module*/
+
+/* Installing jscoverage on ubuntu trusty */ 
+/* sudo apt-get install jscoverage */ 
+
 module.exports = function (grunt) {
   'use strict';
 
@@ -21,6 +25,7 @@ module.exports = function (grunt) {
   gruntConfig.qunit = {
     src: ['src/test/index.html']
   };
+
   grunt.registerTask('test', 'qunit:src');
 
   gruntConfig.watch = {
@@ -29,5 +34,22 @@ module.exports = function (grunt) {
       tasks: ['jshint', 'test']
     }
   };
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  /*grunt.loadNpmTasks('grunt-contrib-watch'); */
+
+  /*grunt.loadNpmTasks('grunt-qunit-cov');
+
+  gruntConfig['qunit-cov'] = {
+        test:
+        {
+            minimum: 0.99,
+            baseDir: 'src',
+            srcDir: 'src/js',
+            depDirs: ['src/test', 'src/test/lib'],
+            outDir: 'output/coverage',
+            testFiles: ['src/test/index.html']
+        }
+    };
+
+    grunt.registerTask('coverage', 'qunit-cov'); */
+
 };
