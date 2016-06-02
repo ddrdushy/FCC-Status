@@ -5,18 +5,21 @@
 /*jslint browser:true */
 /*jshint maxparams: 5 */
 /*global define*/
-/*var $ = require ("../lib/jquery.js"); */
+
+let $ =  require ('../lib/jquery.js'); 
+
+
 define([], function () {
     'use strict';
 
     return {
         getPoints: function (uname) {
 
-            if (uname.length !== 0 && $ !== undefined) {
+            if (uname.length !== 0 && typeof $ !== undefined ) {
                 var points = 0;
-                var url =
-                    'https://www.freecodecamp.com/api/users/about?username=' +
-                    uname.toLowerCase();
+                var url = 'https://www.freecodecamp.com/api/users/about?username=' + uname.toLowerCase();
+
+                console.log ("**** URL " + url); 
 
                 $.ajax({
                     type: 'GET',
@@ -26,7 +29,8 @@ define([], function () {
                     dataType: 'json',
                     success: function (data) {
                         //Do stuff with the JSON data
-                        points = data.about.browniePoints;
+                        if (typeof data !== undefined )
+                          points = data.about.browniePoints;
                         // points = 310;
                     },
                     error: function ( /* xhr, textStatus, errorThrown */ ) {
@@ -34,6 +38,7 @@ define([], function () {
                     }
                 });
                 return points;
+
             } else {
                 return 0;
             }
