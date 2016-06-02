@@ -24,5 +24,5 @@ require([
     });
     test('all-good', function () {
         equal(pw.strength('aAbBcCdD123!#'), 5, 'aAbBcCdD123!#');
-    }); 
+    });
 });

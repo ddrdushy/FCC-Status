@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-	<testsuite name="index" errors="0" failures="0" tests="7" time="0.01">
-		<testcase classname="index" name="util.passwordEvaluator: bad" assertions="1" time="0.01">
-		</testcase>
-		<testcase classname="index" name="util.passwordEvaluator: length-okay" assertions="1" time="0.01">
-		</testcase>
-		<testcase classname="index" name="util.passwordEvaluator: length-good" assertions="1" time="0.01">
-		</testcase>
-		<testcase classname="index" name="util.passwordEvaluator: category-okay" assertions="1" time="0.01">
-		</testcase>
-		<testcase classname="index" name="util.passwordEvaluator: category-good" assertions="1" time="0.01">
-		</testcase>
-		<testcase classname="index" name="util.passwordEvaluator: casing-good" assertions="1" time="0.01">
-		</testcase>
-		<testcase classname="index" name="util.passwordEvaluator: all-good" assertions="1" time="0.01">
-		</testcase>
-	</testsuite>
-	<testsuite name="index" errors="0" failures="0" tests="1" time="0.01">
-		<testcase classname="index" name="util.random: randomBelow" assertions="3" time="0.01">
-		</testcase>
-	</testsuite>
 	<testsuite name="index" errors="1" failures="0" tests="2" time="0.01">
 		<testcase classname="index" name="util.getBrownies: existing user name" assertions="1" time="0.01">
 			<error type="failed" message="Died on test #1: Can't find variable: $">
@@ -42,6 +22,26 @@
 			</error>
 		</testcase>
 		<testcase classname="index" name="util.getBrownies: length-zero user name" assertions="1" time="0.01">
+		</testcase>
+	</testsuite>
+	<testsuite name="index" errors="0" failures="0" tests="1" time="0.01">
+		<testcase classname="index" name="util.random: randomBelow" assertions="3" time="0.01">
+		</testcase>
+	</testsuite>
+	<testsuite name="index" errors="0" failures="0" tests="7" time="0.01">
+		<testcase classname="index" name="util.passwordEvaluator: bad" assertions="1" time="0.01">
+		</testcase>
+		<testcase classname="index" name="util.passwordEvaluator: length-okay" assertions="1" time="0.01">
+		</testcase>
+		<testcase classname="index" name="util.passwordEvaluator: length-good" assertions="1" time="0.01">
+		</testcase>
+		<testcase classname="index" name="util.passwordEvaluator: category-okay" assertions="1" time="0.01">
+		</testcase>
+		<testcase classname="index" name="util.passwordEvaluator: category-good" assertions="1" time="0.01">
+		</testcase>
+		<testcase classname="index" name="util.passwordEvaluator: casing-good" assertions="1" time="0.01">
+		</testcase>
+		<testcase classname="index" name="util.passwordEvaluator: all-good" assertions="1" time="0.01">
 		</testcase>
 	</testsuite>
 </testsuites>

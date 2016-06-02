@@ -10,6 +10,6 @@ require([
     
     test('length-zero user name', function () {
         equal(gBot.getPoints(''), 0, '');
-    }); 
+    });
 
 });

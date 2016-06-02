@@ -5,43 +5,40 @@
 /*jslint browser:true */
 /*jshint maxparams: 5 */
 /*global define*/
-
 /*var $ = require ("../lib/jquery.js"); */
+define([], function () {
+    'use strict';
 
-define([
-], function () {
-  'use strict';
+    return {
+        getPoints: function (uname) {
 
-  return {
-    getPoints: function (uname) {
+            if (uname.length !== 0 && $ !== undefined) {
+                var points = 0;
+                var url =
+                    'https://www.freecodecamp.com/api/users/about?username=' +
+                    uname.toLowerCase();
 
-      if (uname.length !== 0 && $ !== undefined ) {
-        var points = 0;
-        var url = 'https://www.freecodecamp.com/api/users/about?username='+ uname.toLowerCase();
+                $.ajax({
+                    type: 'GET',
+                    url: url,
+                    //data:data,
+                    async: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        //Do stuff with the JSON data
+                        points = data.about.browniePoints;
+                        // points = 310;
+                    },
+                    error: function ( /* xhr, textStatus, errorThrown */ ) {
+                        points = 0;
+                    }
+                });
+                return points;
+            } else {
+                return 0;
+            }
 
-        $.ajax({
-          type: 'GET',
-          url: url,
-          //data:data,
-          async: false,
-          dataType: 'json',
-          success: function (data) {
-            //Do stuff with the JSON data
-            // points = data.about.browniePoints;
-            points = 310;
-          },
-          error: function ( /* xhr, textStatus, errorThrown */ ) {
-            points = 0;
-          }
-        }); 
-        return points;
-      }
-      else {
-        return 0; 
-      }
-
-    }
-  }
+        }
+    };
 
 });
-

@@ -78,7 +78,7 @@ module.exports = function (grunt) {
     };
 
 
-    // coverage
+    // coverag  e
     grunt.loadNpmTasks('grunt-qunit-cov');
     gruntConfig['qunit-cov'] = {
         test:

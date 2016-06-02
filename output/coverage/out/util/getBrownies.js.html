@@ -34,47 +34,43 @@
 <div class="code undef">/*jslint browser:true */</div>
 <div class="code undef">/*jshint maxparams: 5 */</div>
 <div class="code undef">/*global define*/</div>
-<div class="code undef"></div>
 <div class="code undef">/*var $ = require ("../lib/jquery.js"); */</div>
+<div class="code hit">define([], function () {</div>
+<div class="code hit">    'use strict';</div>
 <div class="code undef"></div>
-<div class="code hit">define([</div>
-<div class="code undef">], function () {</div>
-<div class="code hit">  'use strict';</div>
+<div class="code hit">    return {</div>
+<div class="code undef">        getPoints: function (uname) {</div>
 <div class="code undef"></div>
-<div class="code hit">  return {</div>
-<div class="code undef">    getPoints: function (uname) {</div>
+<div class="code hit">            if (uname.length !== 0 && $ !== undefined) {</div>
+<div class="code miss">                var points = 0;</div>
+<div class="code miss">                var url =</div>
+<div class="code undef">                    'https://www.freecodecamp.com/api/users/about?username=' +</div>
+<div class="code undef">                    uname.toLowerCase();</div>
 <div class="code undef"></div>
-<div class="code hit">      if (uname.length !== 0 && $ !== undefined ) {</div>
-<div class="code miss">        var points = 0;</div>
-<div class="code miss">        var url = 'https://www.freecodecamp.com/api/users/about?username='+ uname.toLowerCase();</div>
+<div class="code miss">                $.ajax({</div>
+<div class="code undef">                    type: 'GET',</div>
+<div class="code undef">                    url: url,</div>
+<div class="code undef">                    //data:data,</div>
+<div class="code undef">                    async: false,</div>
+<div class="code undef">                    dataType: 'json',</div>
+<div class="code undef">                    success: function (data) {</div>
+<div class="code undef">                        //Do stuff with the JSON data</div>
+<div class="code miss">                        points = data.about.browniePoints;</div>
+<div class="code undef">                        // points = 310;</div>
+<div class="code undef">                    },</div>
+<div class="code undef">                    error: function ( /* xhr, textStatus, errorThrown */ ) {</div>
+<div class="code miss">                        points = 0;</div>
+<div class="code undef">                    }</div>
+<div class="code undef">                });</div>
+<div class="code miss">                return points;</div>
+<div class="code undef">            } else {</div>
+<div class="code hit">                return 0;</div>
+<div class="code undef">            }</div>
 <div class="code undef"></div>
-<div class="code miss">        $.ajax({</div>
-<div class="code undef">          type: 'GET',</div>
-<div class="code undef">          url: url,</div>
-<div class="code undef">          //data:data,</div>
-<div class="code undef">          async: false,</div>
-<div class="code undef">          dataType: 'json',</div>
-<div class="code undef">          success: function (data) {</div>
-<div class="code undef">            //Do stuff with the JSON data</div>
-<div class="code undef">            // points = data.about.browniePoints;</div>
-<div class="code miss">            points = 310;</div>
-<div class="code undef">          },</div>
-<div class="code undef">          error: function ( /* xhr, textStatus, errorThrown */ ) {</div>
-<div class="code miss">            points = 0;</div>
-<div class="code undef">          }</div>
-<div class="code undef">        }); </div>
-<div class="code miss">        return points;</div>
-<div class="code undef">      }</div>
-<div class="code undef">      else {</div>
-<div class="code hit">        return 0; </div>
-<div class="code undef">      }</div>
-<div class="code undef"></div>
-<div class="code undef">    }</div>
-<div class="code undef">  }</div>
+<div class="code undef">        }</div>
+<div class="code undef">    };</div>
 <div class="code undef"></div>
 <div class="code undef">});</div>
-<div class="code undef"></div>
-<div class="code undef"></div>
 
 
 </body>
