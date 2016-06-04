@@ -17,11 +17,13 @@
 		</testcase>
 	</testsuite>
 	<testsuite name="index" errors="0" failures="0" tests="1" time="0.01">
-		<testcase classname="index" name="util.getBrownies: length-zero user name" assertions="1" time="0.01">
+		<testcase classname="index" name="util.random: randomBelow" assertions="3" time="0.01">
 		</testcase>
 	</testsuite>
-	<testsuite name="index" errors="0" failures="0" tests="1" time="0.01">
-		<testcase classname="index" name="util.random: randomBelow" assertions="3" time="0.01">
+	<testsuite name="index" errors="0" failures="0" tests="2" time="0.01">
+		<testcase classname="index" name="util.getBrownies: existing user name" assertions="1" time="0.01">
+		</testcase>
+		<testcase classname="index" name="util.getBrownies: length-zero user name" assertions="1" time="0.01">
 		</testcase>
 	</testsuite>
 </testsuites>
