@@ -12,8 +12,9 @@ module.exports = function (grunt) {
     grunt.registerTask('all', ['clean', 'lint', 'test', 'coverage', 'bundle']);
 
     // continuous integration
-    grunt.registerTask('ci', ['lint', 'qunit:src']);
+    grunt.registerTask('ci', ['lint', 'test']);
 
+    // grunt.registerTask('ci', ['lint', 'test', 'coverage']);
 
     // clean
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -73,7 +74,7 @@ module.exports = function (grunt) {
     gruntConfig.watch = {
         scripts: {
             files: ['src/**/*.*'],
-            tasks: ['lint', 'qunit:src']
+            tasks: ['lint', 'test']
         }
     };
 

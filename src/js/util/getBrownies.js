@@ -6,7 +6,6 @@
 /*jshint maxparams: 5 */
 /*global $:true, define, console*/
 
-//$ =  require ("../lib/jquery.js");
 
 define([], function () {
     'use strict';
