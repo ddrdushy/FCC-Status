@@ -19,7 +19,7 @@ define([], function () {
                 var points = 0;
                 var url = 'https://www.freecodecamp.com/api/users/about?username=' + uname.toLowerCase();
 
-                console.log("**** URL " + url);
+                console.log("\n**** URL " + url);
 
 
                 $.ajax({
