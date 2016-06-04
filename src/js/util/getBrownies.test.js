@@ -9,7 +9,7 @@ require([
         QUnit.stop();
         equal(gBot.getPoints('kgashok'), 174, 'kgashok');
         QUnit.start();
-    }); 
+    });
      
     test('length-zero user name', function () {
         QUnit.stop();

@@ -45,13 +45,13 @@
 <div class="code undef"></div>
 <div class="code undef"></div>
 <div class="code hit">            if (uname.length !== 0) {</div>
-<div class="code hit">                var points = 0;</div>
-<div class="code hit">                var url = 'https://www.freecodecamp.com/api/users/about?username=' + uname.toLowerCase();</div>
+<div class="code miss">                var points = 0;</div>
+<div class="code miss">                var url = 'https://www.freecodecamp.com/api/users/about?username=' + uname.toLowerCase();</div>
 <div class="code undef"></div>
-<div class="code hit">                console.log("\n**** URL " + url);</div>
+<div class="code miss">                console.log("\n**** URL " + url);</div>
 <div class="code undef"></div>
 <div class="code undef"></div>
-<div class="code hit">                $.ajax({</div>
+<div class="code miss">                $.ajax({</div>
 <div class="code undef">                    type: 'GET',</div>
 <div class="code undef">                    url: url,</div>
 <div class="code undef">                    //data:data,</div>
@@ -65,11 +65,11 @@
 <div class="code undef">                        }</div>
 <div class="code undef">                    },</div>
 <div class="code undef">                    error: function ( /* xhr, textStatus, errorThrown */ ) {</div>
-<div class="code hit">                        points = 0;</div>
+<div class="code miss">                        points = 0;</div>
 <div class="code undef">                    }</div>
 <div class="code undef">                });</div>
 <div class="code undef"></div>
-<div class="code hit">                return points;</div>
+<div class="code miss">                return points;</div>
 <div class="code undef"></div>
 <div class="code undef">            } else {</div>
 <div class="code hit">                return 0;</div>
