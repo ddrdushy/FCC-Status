@@ -16,26 +16,8 @@
 		<testcase classname="index" name="util.passwordEvaluator: all-good" assertions="1" time="0.01">
 		</testcase>
 	</testsuite>
-	<testsuite name="index" errors="1" failures="0" tests="2" time="0.01">
+	<testsuite name="index" errors="0" failures="0" tests="2" time="0.01">
 		<testcase classname="index" name="util.getBrownies: existing user name" assertions="1" time="0.01">
-			<error type="failed" message="Died on test #1: Can't find variable: $">
-	at http://localhost:8082/test/lib/qunit.js:340
-    at http://localhost:8082/js/util/getBrownies.test.js:11
-    at http://localhost:8082/lib/require.min.js:31
-    at http://localhost:8082/lib/require.min.js:21
-    at http://localhost:8082/lib/require.min.js:25
-    at http://localhost:8082/lib/require.min.js:8
-    at http://localhost:8082/lib/require.min.js:26
-    at q (http://localhost:8082/lib/require.min.js:7)
-    at http://localhost:8082/lib/require.min.js:26
-    at http://localhost:8082/lib/require.min.js:22
-    at http://localhost:8082/lib/require.min.js:26
-    at http://localhost:8082/lib/require.min.js:19
-    at W (http://localhost:8082/lib/require.min.js:17)
-    at http://localhost:8082/lib/require.min.js:30
-    at http://localhost:8082/lib/require.min.js:3
-	ReferenceError: Can't find variable: $
-			</error>
 		</testcase>
 		<testcase classname="index" name="util.getBrownies: length-zero user name" assertions="1" time="0.01">
 		</testcase>

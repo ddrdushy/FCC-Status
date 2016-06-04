@@ -4,22 +4,24 @@
 /*jslint latedef:false*/
 /*jslint browser:true */
 /*jshint maxparams: 5 */
-/*global define*/
+/*global $:true, define, console*/
 
-/*let $ =  require ("../lib/jquery.js"); */
+//$ =  require ("../lib/jquery.js");
 
 define([], function () {
     'use strict';
+
 
     return {
         getPoints: function (uname) {
 
 
-            if (uname.length !== 0 && typeof $ !== undefined) {
+            if (uname.length !== 0) {
                 var points = 0;
                 var url = 'https://www.freecodecamp.com/api/users/about?username=' + uname.toLowerCase();
 
-                // console.log("**** URL " + url);
+                console.log("**** URL " + url);
+
 
                 $.ajax({
                     type: 'GET',
@@ -29,7 +31,7 @@ define([], function () {
                     dataType: 'json',
                     success: function (data) {
                         //Do stuff with the JSON data
-                        if (typeof data !== undefined) {
+                        if (typeof (data) !== 'undefined') {
                             points = data.about.browniePoints;
                             // points = 310;
                         }

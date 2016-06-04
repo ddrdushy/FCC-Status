@@ -1,12 +1,13 @@
 /*jshint undef:false, strict:false*/ // Note: to avoid having to write QUnit.module, etc
 require([
-    'util/getBrownies'
+    'util/getBrownies',
+    '../lib/jquery'
 ], function (gBot) {
     module('util.getBrownies');
 
     test('existing user name', function () {
         QUnit.stop();
-        equal(gBot.getPoints('kgashok'), 310, 'kgashok');
+        equal(gBot.getPoints('kgashok'), 174, 'kgashok');
         QUnit.start();
     });
     

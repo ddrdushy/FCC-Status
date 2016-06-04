@@ -29,20 +29,21 @@
 
 <div class="code undef">/*jshint undef:false, strict:false*/ // Note: to avoid having to write QUnit.module, etc</div>
 <div class="code hit">require([</div>
-<div class="code undef">    'util/getBrownies'</div>
+<div class="code undef">    'util/getBrownies',</div>
+<div class="code undef">    '../lib/jquery'</div>
 <div class="code undef">], function (gBot) {</div>
 <div class="code hit">    module('util.getBrownies');</div>
 <div class="code undef"></div>
 <div class="code hit">    test('existing user name', function () {</div>
-<div class="code hit">        QUnit.stop(); </div>
-<div class="code hit">        equal(gBot.getPoints('kgashok'), 310, 'kgashok');</div>
-<div class="code miss">        QUnit.start(); </div>
+<div class="code hit">        QUnit.stop();</div>
+<div class="code hit">        equal(gBot.getPoints('kgashok'), 174, 'kgashok');</div>
+<div class="code hit">        QUnit.start();</div>
 <div class="code undef">    });</div>
 <div class="code undef">    </div>
 <div class="code hit">    test('length-zero user name', function () {</div>
-<div class="code hit">        QUnit.stop(); </div>
+<div class="code hit">        QUnit.stop();</div>
 <div class="code hit">        equal(gBot.getPoints(''), 0, '');</div>
-<div class="code hit">        QUnit.start(); </div>
+<div class="code hit">        QUnit.start();</div>
 <div class="code undef">    });</div>
 <div class="code undef"></div>
 <div class="code undef">});</div>
