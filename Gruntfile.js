@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     grunt.registerTask('all', ['clean', 'lint', 'test', 'coverage', 'bundle']);
 
     // continuous integration
-    grunt.registerTask('ci', ['lint', 'test']);
+    grunt.registerTask('ci', ['lint', 'coverage']);
 
     // grunt.registerTask('ci', ['lint', 'test', 'coverage']);
 
@@ -45,6 +45,7 @@ module.exports = function (grunt) {
         serve: { options: { urls: ['http://localhost:8082/test/index.html']}},
         bundle: ['output/bundle/test/index.html']
     };
+
     grunt.loadNpmTasks('grunt-qunit-junit');
     gruntConfig.qunit_junit = {
         options: {
