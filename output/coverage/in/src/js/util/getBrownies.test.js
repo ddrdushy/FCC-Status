@@ -41,16 +41,29 @@ if (! _$jscoverage['util/getBrownies.test.js']) {
   _$jscoverage['util/getBrownies.test.js'] = [];
   _$jscoverage['util/getBrownies.test.js'][2] = 0;
   _$jscoverage['util/getBrownies.test.js'][6] = 0;
+  _$jscoverage['util/getBrownies.test.js'][8] = 0;
+  _$jscoverage['util/getBrownies.test.js'][9] = 0;
+  _$jscoverage['util/getBrownies.test.js'][10] = 0;
+  _$jscoverage['util/getBrownies.test.js'][11] = 0;
   _$jscoverage['util/getBrownies.test.js'][14] = 0;
   _$jscoverage['util/getBrownies.test.js'][15] = 0;
   _$jscoverage['util/getBrownies.test.js'][16] = 0;
   _$jscoverage['util/getBrownies.test.js'][17] = 0;
 }
-_$jscoverage['util/getBrownies.test.js'].source = ["<span class=\"c\">/*jshint undef:false, strict:false*/</span> <span class=\"c\">// Note: to avoid having to write QUnit.module, etc</span>","require<span class=\"k\">([</span>","    <span class=\"s\">'util/getBrownies'</span><span class=\"k\">,</span>","    <span class=\"s\">'../lib/jquery'</span>","<span class=\"k\">],</span> <span class=\"k\">function</span> <span class=\"k\">(</span>gBot<span class=\"k\">)</span> <span class=\"k\">{</span>","    module<span class=\"k\">(</span><span class=\"s\">'util.getBrownies'</span><span class=\"k\">);</span>","","    <span class=\"c\">/*asyncTest('existing user name', function () {</span>","<span class=\"c\">        QUnit.stop();</span>","<span class=\"c\">        equal(gBot.getPoints('kgashok'), 174, 'kgashok');</span>","<span class=\"c\">        QUnit.start();</span>","<span class=\"c\">    }); */</span>","     ","    test<span class=\"k\">(</span><span class=\"s\">'length-zero user name'</span><span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">()</span> <span class=\"k\">{</span>","        QUnit<span class=\"k\">.</span>stop<span class=\"k\">();</span>","        equal<span class=\"k\">(</span>gBot<span class=\"k\">.</span>getPoints<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">),</span> <span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">''</span><span class=\"k\">);</span>","        QUnit<span class=\"k\">.</span>start<span class=\"k\">();</span>","    <span class=\"k\">}</span><span class=\"k\">);</span>","","<span class=\"k\">}</span><span class=\"k\">);</span>"];
+_$jscoverage['util/getBrownies.test.js'].source = ["<span class=\"c\">/*jshint undef:false, strict:false*/</span> <span class=\"c\">// Note: to avoid having to write QUnit.module, etc</span>","require<span class=\"k\">([</span>","    <span class=\"s\">'util/getBrownies'</span><span class=\"k\">,</span>","    <span class=\"s\">'../lib/jquery'</span>","<span class=\"k\">],</span> <span class=\"k\">function</span> <span class=\"k\">(</span>gBot<span class=\"k\">)</span> <span class=\"k\">{</span>","    module<span class=\"k\">(</span><span class=\"s\">'util.getBrownies'</span><span class=\"k\">);</span>","","    test<span class=\"k\">(</span><span class=\"s\">'existing user name'</span><span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">()</span> <span class=\"k\">{</span>","        QUnit<span class=\"k\">.</span>stop<span class=\"k\">();</span>","        equal<span class=\"k\">(</span>gBot<span class=\"k\">.</span>getPoints<span class=\"k\">(</span><span class=\"s\">'kgashok'</span><span class=\"k\">),</span> <span class=\"s\">174</span><span class=\"k\">,</span> <span class=\"s\">'kgashok'</span><span class=\"k\">);</span>","        QUnit<span class=\"k\">.</span>start<span class=\"k\">();</span>","    <span class=\"k\">}</span><span class=\"k\">);</span>","     ","    test<span class=\"k\">(</span><span class=\"s\">'length-zero user name'</span><span class=\"k\">,</span> <span class=\"k\">function</span> <span class=\"k\">()</span> <span class=\"k\">{</span>","        QUnit<span class=\"k\">.</span>stop<span class=\"k\">();</span>","        equal<span class=\"k\">(</span>gBot<span class=\"k\">.</span>getPoints<span class=\"k\">(</span><span class=\"s\">''</span><span class=\"k\">),</span> <span class=\"s\">0</span><span class=\"k\">,</span> <span class=\"s\">''</span><span class=\"k\">);</span>","        QUnit<span class=\"k\">.</span>start<span class=\"k\">();</span>","    <span class=\"k\">}</span><span class=\"k\">);</span>","","<span class=\"k\">}</span><span class=\"k\">);</span>"];
 _$jscoverage['util/getBrownies.test.js'][2]++;
 require(["util/getBrownies", "../lib/jquery"], (function (gBot) {
   _$jscoverage['util/getBrownies.test.js'][6]++;
   module("util.getBrownies");
+  _$jscoverage['util/getBrownies.test.js'][8]++;
+  test("existing user name", (function () {
+  _$jscoverage['util/getBrownies.test.js'][9]++;
+  QUnit.stop();
+  _$jscoverage['util/getBrownies.test.js'][10]++;
+  equal(gBot.getPoints("kgashok"), 174, "kgashok");
+  _$jscoverage['util/getBrownies.test.js'][11]++;
+  QUnit.start();
+}));
   _$jscoverage['util/getBrownies.test.js'][14]++;
   test("length-zero user name", (function () {
   _$jscoverage['util/getBrownies.test.js'][15]++;

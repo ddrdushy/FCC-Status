@@ -82,6 +82,9 @@ module.exports = function (grunt) {
     // coverage
     grunt.loadNpmTasks('grunt-qunit-cov');
     gruntConfig['qunit-cov'] = {
+        /*options: {
+            vendor:'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+        },*/
         test:
         {
             minimum: 1.0,

@@ -5,7 +5,7 @@ require([
 ], function (gBot) {
     module('util.getBrownies');
 
-    asyncTest('existing user name', function () {
+    test('existing user name', function () {
         QUnit.stop();
         equal(gBot.getPoints('kgashok'), 174, 'kgashok');
         QUnit.start();

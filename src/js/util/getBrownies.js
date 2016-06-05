@@ -4,7 +4,7 @@
 /*jslint latedef:false*/
 /*jslint browser:true */
 /*jshint maxparams: 5 */
-/*global $:true, define, console*/
+/*global $:false, define, console*/
 
 
 define([], function () {
