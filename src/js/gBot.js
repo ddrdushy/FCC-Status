@@ -23,6 +23,10 @@ $(document).ready(function () {
         //data:data,
         async: false,
         dataType: 'json',
+        beforeSend:function(){
+            // this is where we append a loading image
+            $('#ajax-panel').html('<div class="loading"><img src="/images/loading.gif" alt="Loading..." /></div>');
+        },
         success: function (data) {
             //Do stuff with the JSON data
             for (var i = 0; i < data.length; i = i + 1) {
