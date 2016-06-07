@@ -25,7 +25,7 @@ $(document).ready(function () {
         dataType: 'json',
         beforeSend:function(){
             // this is where we append a loading image
-            $('#ajax-panel').html('<div class="loading"><img src="/images/loading.gif" alt="Loading..." /></div>');
+            $('#ajax-panel').html('<div class="loading"><img src="/img/loading.gif" alt="Loading..." /></div>');
         },
         success: function (data) {
             //Do stuff with the JSON data
