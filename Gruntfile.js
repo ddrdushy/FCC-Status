@@ -12,9 +12,9 @@ module.exports = function (grunt) {
     grunt.registerTask('all', ['clean', 'lint', 'test', 'coverage', 'bundle']);
 
     // continuous integration
-    //grunt.registerTask('ci', ['lint', 'test']);
+    grunt.registerTask('ci', ['lint', 'test']);
 
-    grunt.registerTask('ci', ['lint', 'coverage']);
+    // grunt.registerTask('ci', ['lint', 'coverage']);
 
     // clean
     grunt.loadNpmTasks('grunt-contrib-clean');
