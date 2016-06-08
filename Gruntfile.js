@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     // continuous integration
     //grunt.registerTask('ci', ['lint', 'test']);
 
-    grunt.registerTask('ci', ['lint', 'test', 'coverage']);
+    grunt.registerTask('ci', ['lint', 'coverage']);
 
     // clean
     grunt.loadNpmTasks('grunt-contrib-clean');
