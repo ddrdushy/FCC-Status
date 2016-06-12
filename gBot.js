@@ -121,7 +121,7 @@ function browniePointsFetcher(uname){
 
 
 function dataFormatter(image,name,uname,points,urlmedium){
-    alert(urlmedium);
+    //alert(urlmedium);
     var temp_html='<td>';
     temp_html+='<img src='+image+' class="img-thumbnail" width="100px" ></img></td>';
     temp_html+='<td>';
