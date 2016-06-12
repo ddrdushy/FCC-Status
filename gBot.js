@@ -16,7 +16,7 @@ $(document).ready(function(){
         dataType: 'json',
         success: function (data) {
             //Do stuff with the JSON data
-            for(var i=0;i< data.length;i++){
+            for(var i=0;i<data.length;i++){//data.length
                 if(data[i]["name"]=='kgisl/campsite'){
                     roomId=data[i]["id"];
                     noOfUsers=data[i]["userCount"];
@@ -31,7 +31,7 @@ $(document).ready(function(){
     });
     var jsonData=[];
 
-    for(var i=0;i<noOfUsers;i+=30){
+    for(var i=0;i<noOfUsers;i+=30){//30){//noOfUsers
         $.ajax({
             type:'GET',
             url:'https://api.gitter.im/v1/rooms/'+roomId+'/users?access_token='+key+'&skip='+i,
@@ -55,7 +55,7 @@ function getData(jsonData){
         //alert(json["array"].length
         var len=jsonData.length;
         var sum=0;
-        for(var i=0;i<len;i++){
+        for(var i=0;i<len;i++){//len
             if(jsonData[i]["id"]!=='546fc9f1db8155e6700d6e8c' &&
                 jsonData[i]["id"]!=='5433c4b0163965c9bc209625' &&
                 jsonData[i]["id"]!=='570a6857187bb6f0eadec072') {
@@ -63,6 +63,7 @@ function getData(jsonData){
                     sum+=points;
                     arr.push({
                         avatar:jsonData[i]["avatarUrlSmall"],
+                        avatar2:jsonData[i]["avatarUrlMedium"],
                         name:jsonData[i]["displayName"],
                         uname:jsonData[i]["username"],
                         points:points
@@ -86,7 +87,7 @@ function getData(jsonData){
         
         html+=arr.map(function (a) {
             j++;
-            return '<tr><td>'+(j)+'</td>'+dataFormatter(a.avatar, a.name, a.uname, a.points)+'</tr>';
+            return '<tr><td>'+(j)+'</td>'+dataFormatter(a.avatar, a.name, a.uname, a.points,a.avatar2)+'</tr>';
         }).join('');
         html+='</table>';
 
@@ -119,13 +120,14 @@ function browniePointsFetcher(uname){
 }
 
 
-function dataFormatter(image,name,uname,points){
+function dataFormatter(image,name,uname,points,urlmedium){
+    alert(urlmedium);
     var temp_html='<td>';
     temp_html+='<img src='+image+' class="img-thumbnail" width="100px" ></img></td>';
     temp_html+='<td>';
     temp_html+='<h3>'+name+'</h3></td>';
     temp_html+='<td>';
-    temp_html+='<h3><a href="http://freecodecamp.com/'+uname+'" target="_blank">'+uname+'</a></h3></td>';
+    temp_html+='<h3><a href="aboutUser.php?uname='+uname+'&avatar='+urlmedium+'" target="_blank">'+uname+'</a></h3></td>';
     temp_html+='<td>';
     if(points===0){
         temp_html+='<h3><span class="label label-warning">'+points+'</span></h3></td>';
