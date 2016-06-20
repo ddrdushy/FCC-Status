@@ -1,7 +1,8 @@
 Specialized CamperBot for KGISL FCC
 ==============
 
-[![Build Status](https://travis-ci.org/kgisl/FCC-Status.svg?branch=master)](https://travis-ci.org/kgisl/FCC-Status)
+[![travis Status](https://travis-ci.org/kgisl/FCC-Status.svg?branch=master)](https://travis-ci.org/kgisl/FCC-Status)
+[![snap-ci Status](https://snap-ci.com/kgisl/FCC-Status/branch/master/build_image)](https://snap-ci.com/kgisl/FCC-Status/branch/master)
 
 The first working attempt at creating a specialized CamperBot
 for tracking KGISL FCC camper progress. 
