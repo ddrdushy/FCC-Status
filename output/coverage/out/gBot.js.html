@@ -52,6 +52,10 @@
 <div class="code nottested">        //data:data,</div>
 <div class="code nottested">        async: false,</div>
 <div class="code nottested">        dataType: 'json',</div>
+<div class="code nottested">        /*beforeSend:function(){</div>
+<div class="code nottested">            // this is where we append a loading image</div>
+<div class="code nottested">            $('#ajax-panel').html('&lt;div class="loading"&gt;<img src="/img/loading.gif" alt="Loading..." /></div>');</div>
+<div class="code nottested">        },*/</div>
 <div class="code nottested">        success: function (data) {</div>
 <div class="code nottested">            //Do stuff with the JSON data</div>
 <div class="code nottested">            for (var i = 0; i &lt; data.length; i = i + 1) {</div>
@@ -146,6 +150,7 @@
 <div class="code nottested">    for (var i = 0; i &lt; len; i = i + 1) {</div>
 <div class="code nottested">        if (jsonData[i].id !== '546fc9f1db8155e6700d6e8c' &&</div>
 <div class="code nottested">            jsonData[i].id !== '5433c4b0163965c9bc209625' &&</div>
+<div class="code nottested">            jsonData[i].id !== '572db9c4c43b8c6019719c7a' &&</div>
 <div class="code nottested">            jsonData[i].id !== '570a6857187bb6f0eadec072') {</div>
 <div class="code nottested">            points = browniePointsFetcher(jsonData[i].username);</div>
 <div class="code nottested">            sum += points;</div>
@@ -190,6 +195,7 @@
 <div class="code nottested">        '&lt;/span&gt;</h2>');</div>
 <div class="code nottested"></div>
 <div class="code nottested">}</div>
+<div class="code nottested"></div>
 
 
 </body>
