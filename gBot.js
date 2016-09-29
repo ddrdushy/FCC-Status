@@ -56,10 +56,7 @@ function getData(jsonData){
         var len=jsonData.length;
         var sum=0;
         for(var i=0;i<len;i++){
-            if(jsonData[i]["id"]!=='546fc9f1db8155e6700d6e8c' &&
-                jsonData[i]["id"]!=='5433c4b0163965c9bc209625' &&
-                jsonData[i]["id"]!=='572db9c4c43b8c6019719c7a' &&
-                jsonData[i]["id"]!=='570a6857187bb6f0eadec072') {
+            if(jsonData[i]["id"]!=='546fc9f1db8155e6700d6e8c') {
                     points=browniePointsFetcher(jsonData[i]["username"]);
                     sum+=points;
                     arr.push({
