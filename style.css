@@ -1,6 +1,4 @@
-<style type="text/css">
-    .col-xs-3{
-        border-color:#0f0f0f;
-        border-width: 2px;
-    }
-</style>
+.col-xs-3 {
+    border-color: #0f0f0f;
+    border-width: 2px;
+}
