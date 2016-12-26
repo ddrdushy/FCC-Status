@@ -3,6 +3,7 @@ var key="ae28f23f134c4364ad45e7b7355cfa91c92038bb";
 var arr=[];
 var points=0;
 var html='<table class="table" id="data"><tr><th>SNO</th><th>Avatar</th><th>Name</th><th>User Name</th><th>Points</th></tr>';
+var sum=0;
 
 $(document).ready(function(){
     var url='https://api.gitter.im/v1/rooms?access_token='+key;
@@ -31,10 +32,10 @@ $(document).ready(function(){
     });
     var jsonData=[];
 
-    for(var i=0;i<noOfUsers;i+=30){//30){//noOfUsers
+    for(var i=0;i<noOfUsers;i+=100){//30){//noOfUsers
         $.ajax({
             type:'GET',
-            url:'https://api.gitter.im/v1/rooms/'+roomId+'/users?access_token='+key+'&skip='+i,
+            url:'https://api.gitter.im/v1/rooms/'+roomId+'/users?access_token='+key+'&skip='+i+'&limit=100',
             //data:data,
             async: false,
             dataType: 'json',
@@ -54,13 +55,11 @@ function getData(jsonData){
 
         //alert(json["array"].length
         var len=jsonData.length;
-        var sum=0;
+
         for(var i=0;i<len;i++){//len
-            if(jsonData[i]["id"]!=='546fc9f1db8155e6700d6e8c' &&
-                jsonData[i]["id"]!=='5433c4b0163965c9bc209625' &&
-                jsonData[i]["id"]!=='570a6857187bb6f0eadec072') {
-                    points=browniePointsFetcher(jsonData[i]["username"]);
-                    sum+=points;
+            if(jsonData[i]["username"]!=='QuincyLarson') {
+                    browniePointsFetcher(jsonData[i]["username"]);
+
                     arr.push({
                         avatar:jsonData[i]["avatarUrlSmall"],
                         avatar2:jsonData[i]["avatarUrlMedium"],
@@ -68,23 +67,13 @@ function getData(jsonData){
                         uname:jsonData[i]["username"],
                         points:points
                     });
-                
-                $('.progress-bar').css({
-                    width: (i/len) * 100 + '%'
-                });
+
             }
         }
-        $('.progress-bar').prop("hidden",true);
 
-
-        arr.sort(function(a,b){
-            return a.points- b.points;
-        });
-
-        arr.reverse();
         var j=0;
-        
-        
+
+
         html+=arr.map(function (a) {
             j++;
             return '<tr><td>'+(j)+'</td>'+dataFormatter(a.avatar, a.name, a.uname, a.points,a.avatar2)+'</tr>';
@@ -94,7 +83,7 @@ function getData(jsonData){
         $("#data").html(html);
 
         var a=$("#data").html();
-    $("#campers").html('<h2><span class="label label-info">Total Campers:- '+j+'</span></h2>');
+        $("#campers").html('<h2><span class="label label-info">Total Campers:- '+j+'</span></h2>');
         $("#totalProblems").html('<h2><span class="label label-info">Total Problems:- '+sum+'</span></h2>');
 
 }
@@ -106,17 +95,21 @@ function browniePointsFetcher(uname){
         type:'GET',
         url:url,
         //data:data,
-        async: false,
+        async: true,
         dataType: 'json',
         success: function (data) {
             //Do stuff with the JSON data
             points=data["about"]["browniePoints"];
+            $('#'+uname).html('<h2>'+points+'</h2>');
+            sum+=points;
+            $("#totalProblems").html('<h2><span class="label label-info">Total Problems:- '+sum+'</span></h2>');
+
         },
         error:function(xhr, textStatus, errorThrown){
             points=0;
+            $('#'+uname).html('<h2>0</h2>');
         }
     });
-    return points;
 }
 
 
@@ -128,12 +121,12 @@ function dataFormatter(image,name,uname,points,urlmedium){
     temp_html+='<h3>'+name+'</h3></td>';
     temp_html+='<td>';
     temp_html+='<h3><a href="aboutUser.php?uname='+uname+'&avatar='+urlmedium+'" target="_blank">'+uname+'</a></h3></td>';
-    temp_html+='<td>';
-    if(points===0){
+    temp_html+='<td id='+uname+'></td>';
+  /*  if(points===0){
         temp_html+='<h3><span class="label label-warning">'+points+'</span></h3></td>';
     }else{
         temp_html+='<h3>'+points+'</h3></td>';
-    }
+    }*/
 
     return temp_html;
 }
