@@ -121,7 +121,7 @@ function dataFormatter(image, name, uname, points, urlmedium) {
     temp_html += '<td>';
     temp_html += '<h3>' + name + '</h3></td>';
     temp_html += '<td>';
-    temp_html += '<h3><a href="http://freecodecamp.com/"' + uname + ' target="_blank">' + uname + '</a></h3></td>';
+    temp_html += '<h3><a href="http://freecodecamp.com/' +uname + ' target="_blank">' + uname + '</a></h3></td>';
     temp_html += '<td id=' + uname + ' class="points"></td>';
     return temp_html;
 }
