@@ -49,10 +49,11 @@ $(document).ready(function() {
     }
     getData(jsonData);
 
-    setTimeout(function() { //calls click event after a certain time
+    setTimeout(function() {
         console.log("function called");
         sortTable();
-    }, 80000);
+    }, 10000);
+
 });
 
 function getData(jsonData) {
