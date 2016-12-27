@@ -9,8 +9,7 @@ $(document).ready(function() {
     var roomId = "";
     var noOfUsers = 0;
     $.ajax({
-        type: 'GET',
-        url: url,
+        type: 'GET', url: url,
         //data:data,
         async: false,
         dataType: 'json',
@@ -49,11 +48,11 @@ $(document).ready(function() {
     }
     getData(jsonData);
 
-    setTimeout(function() {
-        console.log("function called");
-        sortTable();
-    }, 10000);
+});
 
+$(document).ajaxStop(function() {
+    console.log('triggered');
+    sortTable();
 });
 
 function getData(jsonData) {
@@ -64,13 +63,7 @@ function getData(jsonData) {
         if (jsonData[i]["username"] !== 'QuincyLarson') {
             browniePointsFetcher(jsonData[i]["username"]);
 
-            arr.push({
-                avatar: jsonData[i]["avatarUrlSmall"],
-                avatar2: jsonData[i]["avatarUrlMedium"],
-                name: jsonData[i]["displayName"],
-                uname: jsonData[i]["username"],
-                points: points
-            });
+            arr.push({avatar: jsonData[i]["avatarUrlSmall"], avatar2: jsonData[i]["avatarUrlMedium"], name: jsonData[i]["displayName"], uname: jsonData[i]["username"], points: points});
 
         }
     }
@@ -93,8 +86,7 @@ function browniePointsFetcher(uname) {
     var points = 0;
     var url = 'https://www.freecodecamp.com/api/users/about?username=' + uname.toLowerCase();
     $.ajax({
-        type: 'GET',
-        url: url,
+        type: 'GET', url: url,
         //data:data,
         async: true,
         dataType: 'json',
@@ -113,7 +105,6 @@ function browniePointsFetcher(uname) {
     });
 }
 
-
 function dataFormatter(image, name, uname, points, urlmedium) {
     //alert(urlmedium);
     var temp_html = '<td>';
@@ -121,7 +112,7 @@ function dataFormatter(image, name, uname, points, urlmedium) {
     temp_html += '<td>';
     temp_html += '<h3>' + name + '</h3></td>';
     temp_html += '<td>';
-    temp_html += '<h3><a href="http://freecodecamp.com/' +uname+ '" target="_blank">' + uname + '</a></h3></td>';
+    temp_html += '<h3><a href="http://freecodecamp.com/' + uname + '" target="_blank">' + uname + '</a></h3></td>';
     temp_html += '<td id=' + uname + ' class="points"></td>';
     return temp_html;
 }
