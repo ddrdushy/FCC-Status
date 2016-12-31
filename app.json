@@ -1,0 +1,9 @@
+{
+    "name": "FCC Counter",
+    "repository": "https://github.com/kgisl/FCC-Status",
+    "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-static"
+        }
+    ]
+}

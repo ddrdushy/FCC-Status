@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FCC.test</title>
+    <link rel="stylesheet" href="lib/qunit.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="../lib/require.min.js"></script>
+    <script src="lib/qunit.js"></script>
+    <script src="lib/sinon.js"></script>
+    <script>
+        QUnit.config.autostart = false;
+        require.config({
+            baseUrl: "../js"
+        });
+        require([
+            "util/random.test",
+            "util/passwordEvaluator.test",
+            "util/getBrownies.test"
+        ],function() {
+            QUnit.start();
+        });
+    </script>
+</body>
+</html>
