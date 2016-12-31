@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style type="text/css">
     .col-xs-3 {
         border-color:#0f0f0f;
@@ -12,3 +13,9 @@
 </style>
 
 
+=======
+.col-xs-3 {
+    border-color: #0f0f0f;
+    border-width: 2px;
+}
+>>>>>>> a1543b770d03718d2c9c52ae1062ed7f005c61c2
