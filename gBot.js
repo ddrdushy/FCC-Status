@@ -89,7 +89,7 @@ function browniePointsFetcher(uname) {
         type: 'GET', url: url,
         //data:data,
         async: true,
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function(data) {
             //Do stuff with the JSON data
             points = data["about"]["browniePoints"];
