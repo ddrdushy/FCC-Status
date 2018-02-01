@@ -84,7 +84,7 @@ function getData(jsonData) {
 
 function browniePointsFetcher(uname) {
     var points = 0;
-    var url = 'https://cors-anywhere.herokuapp.com/http://www.freecodecamp.com/api/users/about?username=' + uname.toLowerCase();
+    var url = 'https://comfortable-fibre.glitch.me/' + uname.toLowerCase();
     $.ajax({
         type: 'GET', url: url,
         //data:data,
