@@ -84,12 +84,14 @@ function getData(jsonData) {
 
 function browniePointsFetcher(uname) {
     var points = 0;
-    var url = 'https://comfortable-fibre.glitch.me/' + uname.toLowerCase();
+    var url = 'https://www.freecodecamp.org/api/users/about?username=' + uname.toLowerCase();
     $.ajax({
-        type: 'GET', url: url,
+        type: 'GET', 
+		url: url,
         //data:data,
         async: true,
-        dataType: 'jsonp',
+        dataType: 'json',
+		crossDomain: true,
         success: function(data) {
             //Do stuff with the JSON data
             points = data["about"]["browniePoints"];
