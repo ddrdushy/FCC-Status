@@ -9,19 +9,7 @@ $(document).ready(function() {
   var roomId = "";
   var jsonData = [];
   var noOfUsers = 0;
-
-  if (typeof(Storage) !== "undefined") {
-    // Code for localStorage/sessionStorage.
-    /* localStorage.setItem("lastname", url);
-     var s=localStorage.getItem("lastname");
-     console.log(s);*/
-     
-
-  } else {
-      // Sorry! No Web Storage support..
-      console.log("No Local storage support");
-  }
-/*
+  
   $.ajax({
     type: 'GET',
     url: url,
@@ -61,7 +49,7 @@ $(document).ready(function() {
     });
   }
   getData(jsonData);
-*/
+
 });
 
 $(document).ajaxStop(function() {
